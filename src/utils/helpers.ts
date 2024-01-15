@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import bcrypt from 'bcryptjs';
 
-export async function hasPassword(rawPassword: string) {
+export async function hashPassword(rawPassword: string) {
   const salt = await bcrypt.genSalt();
   return bcrypt.hash(rawPassword, salt);
 }
